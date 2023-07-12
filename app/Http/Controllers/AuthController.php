@@ -24,6 +24,8 @@ class AuthController extends Controller
             'role' => 'required|in:Admin,FIAdmin,SecurityGuard,RH,Resident',
         ]);
 
+        $cont = 1;
+
         if ($validator->fails()) {
             return response()->json(['error' => $validator->errors()], 400);
         }
